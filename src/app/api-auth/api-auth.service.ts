@@ -12,7 +12,7 @@ export class ApiAuthService {
   userName$ = this.userNameSubject.asObservable();
 
   constructor(private http: HttpClient) {}
-  
+
   // Método para autenticar al usuario
   authenticate(userData: any): Observable<any> {
     return this.http.post(this.baseUrl, userData); // Envía el JSON con los datos del usuario
@@ -21,7 +21,7 @@ export class ApiAuthService {
   setUserName(name: string): void {
     this.userNameSubject.next(name);
   }
-  
+
 }
 
 

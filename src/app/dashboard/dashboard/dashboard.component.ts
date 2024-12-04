@@ -9,10 +9,10 @@ import { ApiAuthService } from '../../api-auth/api-auth.service'; // Importa el 
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
+
 export class DashboardComponent implements OnInit {
   userName: string = '';
   constructor(private router: Router, private apiAuthService:ApiAuthService) {}
-
 
   ngOnInit(): void {
     this.apiAuthService.userName$.subscribe((name) => {
