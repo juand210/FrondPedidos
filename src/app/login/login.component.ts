@@ -29,7 +29,8 @@ export class LoginComponent {
       // Si el formulario es válido, envía los datos al API
       this.apiAuthService.authenticate({ user_name: this.user_name, password: this.password }).subscribe(
         (response) => {       
-          if (response.Result) {      
+          if (response.Result) {  
+              this.apiAuthService.setUserName(this.user_name);  // Establecer el nombre de usuario en el servicio    
               this.router.navigate(['/dashboard']); // Redirige al cargar el componente          
           } else {
             alert('Credenciales incorrectas');
